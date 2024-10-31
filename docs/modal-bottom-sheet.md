@@ -455,14 +455,18 @@ ModalBottomSheet(rememberModalBottomSheetState(initialDetent = SheetDetent.Fully
         val window = LocalModalWindow.current
         LaunchedEffect(Unit) {
             // change system bars to transparent
-            window.navigationBarColor = Color.Transparent.toArgb()
             window.statusBarColor = Color.Transparent.toArgb()
+            window.navigationBarColor = Color.Black.copy(0.33f).toArgb()
 
             // don't forget to update the icons too
-            WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = true
-            WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightNavigationBars = true
+            val windowInsetsController = WindowInsetsControllerCompat(window, window.decorView)
+            windowInsetsController.isAppearanceLightStatusBars = true
+            windowInsetsController.isAppearanceLightNavigationBars = false
         }
-        BasicText("Transparent status bar, darkened navbars. Easy-peazy 😎 ", modifier = Modifier.navigationBarsPadding())
+        BasicText(
+            "Transparent status bar, darkened navbars. Easy-peazy 😎 ",
+            modifier = Modifier.navigationBarsPadding()
+        )
     }
 }
 ```
