@@ -462,7 +462,7 @@ ModalBottomSheet(rememberModalBottomSheetState(initialDetent = SheetDetent.Fully
             WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = true
             WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightNavigationBars = true
         }
-        BasicText("Transparent status bar, darkened navbars. Easy-peasy 😎 ", modifier = Modifier.navigationBarsPadding())
+        BasicText("Transparent status bar, darkened navbars. Easy-peazy 😎 ", modifier = Modifier.navigationBarsPadding())
     }
 }
 ```
