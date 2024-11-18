@@ -27,6 +27,7 @@ import java.util.*
 @Composable
 internal actual fun Modal(
     onKeyEvent: (KeyEvent) -> Boolean,
+    onBackPressed: () -> Unit,
     content: @Composable () -> Unit
 ) {
     val parentView = LocalView.current
@@ -48,11 +49,12 @@ internal actual fun Modal(
                         Box(Modifier.onKeyEvent(onKeyEvent)) {
                             BackHandler(
                                 onBack = {
-                                    val backKeyDown = NativeKeyEvent(
-                                        NativeKeyEvent.ACTION_DOWN, NativeKeyEvent.KEYCODE_BACK
-                                    )
-                                    val backPress = KeyEvent(backKeyDown)
-                                    onKeyEvent(backPress)
+//                                    val backKeyDown = NativeKeyEvent(
+//                                        NativeKeyEvent.ACTION_DOWN, NativeKeyEvent.KEYCODE_BACK
+//                                    )
+//                                    val backPress = KeyEvent(backKeyDown)
+//                                    onKeyEvent(backPress)
+                                    onBackPressed()
                                 }
                             )
                             content()

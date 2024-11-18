@@ -15,7 +15,7 @@ plugins {
 
 val publishGroupId = "com.composables"
 val publishArtifactId = "core"
-val publishVersion = "1.20.0"
+val publishVersion = "sindrenm"
 val githubUrl = "github.com/composablehorizons/compose-unstyled"
 
 composeCompiler {
@@ -158,11 +158,11 @@ afterEvaluate {
     }
 }
 
-signing {
-    useInMemoryPgpKeys(
-        getLocalProperty("signing.keyId") ?: System.getenv("SIGNING_KEY_ID"),
-        getLocalProperty("signing.key") ?: System.getenv("SIGNING_KEY"),
-        getLocalProperty("signing.password") ?: System.getenv("SIGNING_PASSWORD"),
-    )
-    sign(publishing.publications)
-}
+//signing {
+//    useInMemoryPgpKeys(
+//        getLocalProperty("signing.keyId") ?: System.getenv("SIGNING_KEY_ID"),
+//        getLocalProperty("signing.key") ?: System.getenv("SIGNING_KEY"),
+//        getLocalProperty("signing.password") ?: System.getenv("SIGNING_PASSWORD"),
+//    )
+//    sign(publishing.publications)
+//}

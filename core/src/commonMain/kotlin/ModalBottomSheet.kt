@@ -142,6 +142,7 @@ val DoNothing: () -> Unit = {}
 public fun ModalBottomSheet(
     state: ModalBottomSheetState,
     properties: ModalSheetProperties = ModalSheetProperties(),
+    onBackPressed: () -> Unit = DoNothing,
     onDismiss: () -> Unit = DoNothing,
     content: @Composable (ModalBottomSheetScope.() -> Unit),
 ) {
@@ -163,7 +164,7 @@ public fun ModalBottomSheet(
                 { false }
             }
 
-            Modal(onKeyEvent = onKeyEvent) {
+            Modal(onKeyEvent = onKeyEvent, onBackPressed = onBackPressed) {
                 Box(Modifier
                     .fillMaxSize()
                     .let {

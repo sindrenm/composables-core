@@ -18,6 +18,7 @@ import androidx.compose.ui.window.DialogProperties
 @Composable
 internal actual fun Modal(
     onKeyEvent: (KeyEvent) -> Boolean,
+    onBackPressed: () -> Unit,
     content: @Composable () -> Unit
 ) = androidx.compose.ui.window.Dialog(
     onDismissRequest = {},
